@@ -1,0 +1,5 @@
+43316258 | Federico Del Valle   | 7.500000
+45684444 | Pedro Melissari      | 10.000000
+47433222 | Yesmina Veron        | 8.000000
+50433211 | Lionel Messi         | 10.000000
+3923329 | Stephen Curry        | 30.000000

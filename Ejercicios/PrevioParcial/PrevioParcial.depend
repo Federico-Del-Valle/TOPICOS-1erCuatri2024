@@ -1,0 +1,80 @@
+# depslib dependency file v1.0
+1717865496 source:c:\users\feded\onedrive\desktop\facultad\topicos\biblios\strings.c
+	"Strings.h"
+	<stdio.h>
+	<string.h>
+
+1717865504 c:\users\feded\onedrive\desktop\facultad\topicos\biblios\strings.h
+
+1717977283 source:c:\users\feded\onedrive\desktop\facultad\topicos\ejercicios\previoparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<search.h>
+	<stddef.h>
+	"../../BIBLIOS/func_Strings.h"
+	"../../BIBLIOS/func_Gen.h"
+	"../../BIBLIOS/func_Arch.h"
+	"../../BIBLIOS/func_Mat.h"
+
+1716654284 c:\users\feded\onedrive\desktop\facultad\topicos\biblios\func_strings.h
+
+1717804845 c:\users\feded\onedrive\desktop\facultad\topicos\biblios\func_gen.h
+	<stddef.h>
+
+1717454938 source:c:\users\feded\onedrive\desktop\facultad\topicos\biblios\func_gen.c
+	"func_Gen.h"
+	<stdio.h>
+	<string.h>
+	<stddef.h>
+
+1717981023 source:c:\users\feded\onedrive\desktop\facultad\topicos\biblios\func.mat.c
+	"func_Mat.h"
+	<stdio.h>
+	<stdlib.h>
+
+1717981023 c:\users\feded\onedrive\desktop\facultad\topicos\biblios\func_mat.h
+
+1717622883 c:\users\feded\onedrive\desktop\facultad\topicos\biblios\func_arch.h
+
+1717792452 source:c:\users\feded\onedrive\desktop\facultad\topicos\biblios\func_arch.c
+	"func_Arch.h"
+	<stdio.h>
+	<stdlib.h>
+
+1717792452 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_arch.c
+	"func_Arch.h"
+	<stdio.h>
+	<stdlib.h>
+
+1717622883 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_arch.h
+
+1717454938 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_gen.c
+	"func_Gen.h"
+	<stdio.h>
+	<string.h>
+	<stddef.h>
+
+1717804845 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_gen.h
+	<stddef.h>
+
+1717865496 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\strings.c
+	"Strings.h"
+	<stdio.h>
+	<string.h>
+
+1717865504 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\strings.h
+
+1717981038 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\ejercicios\previoparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<search.h>
+	<stddef.h>
+	"../../BIBLIOS/func_Strings.h"
+	"../../BIBLIOS/func_Gen.h"
+	"../../BIBLIOS/func_Arch.h"
+	"../../BIBLIOS/func_Mat.h"
+
+1716654284 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_strings.h
+
+1717981132 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_mat.h
+
