@@ -6,22 +6,16 @@
 #include "../../BIBLIOS/func_Gen.h"
 #include "../../BIBLIOS/func_Arch.h"
 #include "../../BIBLIOS/func_Mat.h"
-
+#include "../../BIBLIOS/func_Dinamic.h"
+#include "../../BIBLIOS/func_Vec.h"
 
 int main() {
-    int mat[][3] = {
-        {0, 6, 2},
-        {1, 0, 3},
-        {2, 3, 0}
-    };
+    int tam;
+    printf("\nINGRESE EL TAMAÑO DEL VECTOR:");
+    scanf("%d", &tam);
+    sAlumno* alumno = crearVectorAlumno(tam);
 
-    int verifica = puntajes(mat, 3, 3);
-
-    if (verifica == 1) {
-        printf("La matriz de puntajes cumple con las condiciones.\n");
-    } else {
-        printf("La matriz de puntajes NO cumple con las condiciones.\n");
-    }
+    mostrarAlumnos(alumno, tam);
 
     return 0;
 }
