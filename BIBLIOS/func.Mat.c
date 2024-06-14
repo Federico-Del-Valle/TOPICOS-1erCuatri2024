@@ -107,4 +107,33 @@ void mostrarMatriz(int mat[][MAX_COL], int f, int c)
     }
 }
 
+//Ejercicio 1.19
+//Desarrollar una función para obtener la matriz producto entre dos matrices de enteros
+
+
+int matrizProducto(int mata[][MAX_COL], int matb[][MAX_COL], int matProd[][MAX_COL], int cfa, int cca, int cfb, int ccb)
+{
+    int i, j,k;
+    if(cca != cfb)
+    {
+        printf("\nNo se pudo hacer la multiplicacion de matrices");
+        return 0;
+    }
+    else
+    {
+        for(i = 0; i< cfa; i++)
+        {
+            for(j = 0; j < ccb; j++)
+            {
+                for(k=0; k <cfb; k++)
+                {
+                    matProd[i][j] += mata[i][k] * matb[k][j];
+                }
+            }
+        }
+    }
+    return 1;
+}
+
+
 

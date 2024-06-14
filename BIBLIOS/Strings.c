@@ -143,10 +143,10 @@ void normalizarOracion(char* cad)
 }
 
 
-int cmp(const void* a, const void* b)
+/*int cmp(const void* a, const void* b)
 {
     return *((int*) a) - *((int*)b);
-}
+}*/
 
 int esLetra1(char letra) {
     int r;
