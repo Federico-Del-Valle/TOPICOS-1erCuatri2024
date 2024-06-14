@@ -136,4 +136,51 @@ int matrizProducto(int mata[][MAX_COL], int matb[][MAX_COL], int matProd[][MAX_C
 }
 
 
+/*Ejercicio 1.20
+Se dispone de una matriz cuadrada de enteros de orden N, donde cada elemento [i][j] representa la
+cantidad de puntos que obtuvo el equipo i frente al equipo j al fin de un torneo de fútbol (partidos
+de ida y vuelta) en el que participaron N equipos. El sistema de puntuación es: 3 puntos para el
+ganador del partido y ninguno para el perdedor; 1 punto para cada equipo en caso de empate.
+Desarrollar una función que determine si la matriz está correctamente generada.
+Desarrollar una función que genere un arreglo de N elementos tal que cada elemento V[k] contenga
+la cantidad de puntos obtenidos por el equipo k.
+*/
+
+int puntajes(int mat[][3], int cf, int cc)
+{
+    int matReflex[2][6] = {
+        {0,1,2,3,4,6},
+        {6,4,2,3,1,0}};
+
+        int pos,i,j;
+
+    for( i =0; i < cf; i++)
+    {
+        for(j =i +1; j < cc; j++)
+        {
+            pos = buscar(matReflex[0], mat[i][j], 6);
+            if(pos < 0 || (mat[j][i] != matReflex[1][pos]))
+            {
+                return 0;
+            }
+
+        }
+    }
+    return 1;
+}
+
+int buscar(int* vec, int elemento, int ce)
+{
+    int pos = -1;
+    int i =0;
+    while(pos == -1 && i < ce)
+    {
+        if(*(vec+i) == elemento)
+            pos = i;
+        else
+            i++;
+    }
+    return pos;
+}
+
 

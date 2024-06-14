@@ -9,20 +9,19 @@
 
 
 int main() {
+    int mat[][3] = {
+        {0, 6, 2},
+        {1, 0, 3},
+        {2, 3, 0}
+    };
 
-    int mata[MAX_FIL][MAX_COL] =
-    {{1,2,3},
-    {2,3,4},
-    {4,5,6}};
+    int verifica = puntajes(mat, 3, 3);
 
-    int matb[MAX_FIL][MAX_COL] =
-    {{1,2},
-    {2,3},
-    {0,1}};
-    int matProd[MAX_FIL][MAX_COL] = {{}};
-
-    matrizProducto(mata,matb,matProd,3,3,3,2);
-    mostrarMatriz(matProd,3,2);
+    if (verifica == 1) {
+        printf("La matriz de puntajes cumple con las condiciones.\n");
+    } else {
+        printf("La matriz de puntajes NO cumple con las condiciones.\n");
+    }
 
     return 0;
 }
