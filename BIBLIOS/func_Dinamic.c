@@ -1,6 +1,7 @@
 #include "func_Dinamic.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 //PUNTO 1 Y 2
 int* crearVector(int tam)
@@ -62,4 +63,32 @@ void destruirAlumno(sAlumno* vec)
 {
     free(vec);
     vec = NULL;
+}
+
+//PUNTO 4
+
+char* cadenaCopia(const char* cadenaOriginal)
+{
+    unsigned tamanio = strlen(cadenaOriginal);
+    char* copia = malloc(sizeof(char)* (tamanio +1));
+    char* copiaInicio = copia;
+    while(*cadenaOriginal)
+    {
+        *copia = *cadenaOriginal;
+        copia++;
+        cadenaOriginal++;
+    }
+    *copia = '\0';
+    return copiaInicio;
+}
+
+void* copiaCosas(void* elemento, unsigned tam)
+{
+    void* cosa = malloc(tam);
+    if(!cosa)
+    {
+        return NULL;
+    }
+    memcpy(cosa, elemento, tam);
+    return cosa;
 }

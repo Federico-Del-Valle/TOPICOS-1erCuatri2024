@@ -9,13 +9,10 @@
 #include "../../BIBLIOS/func_Dinamic.h"
 #include "../../BIBLIOS/func_Vec.h"
 
-int main() {
-    int tam;
-    printf("\nINGRESE EL TAMAÑO DEL VECTOR:");
-    scanf("%d", &tam);
-    sAlumno* alumno = crearVectorAlumno(tam);
-
-    mostrarAlumnos(alumno, tam);
-
+int main()
+{
+    int numero= 21;
+    int* edad = (int*)copiaCosas(&numero, sizeof(int));
+    printf("\n %d", *edad);
     return 0;
 }

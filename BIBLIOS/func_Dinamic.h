@@ -12,4 +12,7 @@ void mostrarAlumnos(sAlumno* vec, int tam);
 int* crearVector(int tam);
 void destruirVector(int* vec);
 sAlumno* crearVectorAlumno(int tam);
+char* cadenaCopia(const char* cadenaOriginal);
+void* copiaCosas(void* elemento, unsigned tam);
+
 #endif // FUNC_DINAMIC_H_INCLUDED
