@@ -14,5 +14,5 @@ void destruirVector(int* vec);
 sAlumno* crearVectorAlumno(int tam);
 char* cadenaCopia(const char* cadenaOriginal);
 void* copiaCosas(void* elemento, unsigned tam);
-
+float promedioPosPares(float* vec, unsigned ce);
 #endif // FUNC_DINAMIC_H_INCLUDED

@@ -9,6 +9,13 @@ void mostrarVector(int* vec, int tam) {
     }
     printf("\n");
 }
+void mostrarVectorFloat(float* vec, int tam) {
+    printf("\nDatos del vector:\n");
+    for (int i = 0; i < tam; i++) {
+        printf("%f ", *(vec + i));
+    }
+    printf("\n");
+}
 
 void mostrarAlumnos(sAlumno* vec, int tam) {
     printf("\n%8s  %-20s  %8s  %8s\n", "DNI", "Nombre", "Promedio", "Condicion");
