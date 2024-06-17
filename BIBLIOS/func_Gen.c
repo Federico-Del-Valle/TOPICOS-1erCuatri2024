@@ -110,28 +110,6 @@ void swap1(void *va, void *vb, size_t s) {
     }
 }
 
-void ordSelec(void *vec, size_t ce, size_t tam, int cmp(const void *, const void *)) {
-    size_t i, j;
-    char *menor = (char *)vec; // Puntero para el elemento menor
-    char *ini = (char *)vec;   // Puntero al inicio del array
-
-    for (i = 0; i < ce - 1; i++) {
-        menor = ini + i * tam; // Establecer el menor como el elemento actual
-
-        for (j = i + 1; j < ce; j++) {
-            char *curr = ini + j * tam; // Puntero al elemento actual en el ciclo
-
-            if (cmp(curr, menor) < 0) { // Verificar si el elemento actual es menor que el menor encontrado hasta ahora
-                menor = curr; // Actualizar el menor encontrado
-            }
-        }
-
-        if (menor != (ini + i * tam)) { // Si encontramos un menor diferente al actual, intercambiarlos
-            swap1(menor, ini + i * tam, tam);
-        }
-    }
-}
-
 int cmpAlumno(const void *a, const void *b)
 {
     const Alumno *ia = (const Alumno *)a;
@@ -143,6 +121,162 @@ int cmp(const void *a, const void *b) {
     const Item *ia = (const Item *)a;
     const Item *ib = (const Item *)b;
     return (ia->id - ib->id);
+}
+
+void mostrarPersona(sPersona* vec, int tam) {
+    printf("\n%8s  %-20s  %-20s  %-4s\n", "DNI", "Apellido", "Nombre", "Peso");
+    for (int i = 0; i < tam; i++) {
+        printf("%8d  %-20s  %-20s  %-.2f\n", (vec + i)->dni, (vec + i)->apellido, (vec + i)->nombres, (vec + i)->peso);
+    }
+    printf("\n");
+}
+
+int compararNombre(const void* a, const void* b)
+{
+    sPersona* personaA = (sPersona*)a;
+    sPersona* personaB = (sPersona*)b;
+    return strcmpi(personaA->nombres, personaB ->nombres);
+}
+
+/*Ejercicio 3.15
+Desarrolle una función de intercambio genérica tal que pueda intercambiar 2 bloques de información
+de manera independiente al tipo de dato. No utilice memoria dinámica.
+*/
+
+void intercambioGenerica(void* dato1, void* dato2, unsigned tam)
+{
+    char* valor1 = (char*)dato1;
+    char* valor2 = (char*)dato2;
+    char temp;
+    while(tam--)
+    {
+        temp = *valor1;
+        *valor1 = *valor2;
+        *valor2 = temp;
+        valor1++;
+        valor2++;
+    }
+}
+
+
+/*Desarrolle una función genérica que encuentre el menor elemento dentro de un vector. Verifique su
+funcionamiento encontrando el menor entero, el menor flotante, y el menor alumno (Por DNI,
+nombre y apellido o promedio). La función retornará la dirección del elemento menor*/
+
+void* menorElementoGenerico(void* v, unsigned tam, unsigned ce, int cmpMenor(const void* a, const void* b))
+{
+    int i;
+    char* ini = (char*)v;
+    char* menor = (char*)v;
+    char* curr;
+    for(i=0; i< ce; i++)
+    {
+        curr = ini+i *tam;
+
+        if(cmpMenor(curr, menor)< 0)
+        {
+            menor = curr;
+        }
+    }
+    return menor;
+}
+
+int cmpDNI(const void* a, const void* b)
+{
+    // Convertimos los parámetros a sPersona*
+    const sPersona* personaA = (const sPersona*)a;
+    const sPersona* personaB = (const sPersona*)b;
+
+    // Comparación por DNI
+    return personaA->dni - personaB->dni;
+}
+
+int cmpChar(const void* a, const void* b)
+{
+    const char chara = *(const char*)a;
+    const char charb = *(const char*)b;
+    if(chara > charb)
+        return 1;
+    if(chara < charb)
+        return -1;
+    return 0;
+}
+
+/*Desarrolle una función genérica que permita insertar de forma ordenada un elemento en un vector.
+Puede ayudarse, usando como patrón, la versión no genérica desarrollada y probada de la práctica 1
+y con las funciones de biblioteca memcpy y memmove.*/
+
+
+//Esta funcion estuve una banda de tiempo en hacerla, me canse asi que le mande lo que habia hecho a chatgpt y me la termino de corregir. Habria que chequearla bien.
+unsigned insertarOrdenado(void* vec, unsigned* ce, unsigned tamdato, unsigned tamvec, void* elem, int cmp(const void*, const void*)) {
+    char* base = (char*)vec;
+    int i = 0;
+    char* insertPos;
+    char* prox;
+
+    // Verificar que no se exceda el tamaño del vector
+    if (*ce >= tamvec) {
+        return *ce; // No se puede insertar porque el vector está lleno
+    }
+
+    // Caso especial: Si el vector está vacío, simplemente insertar el elemento
+    if (*ce == 0) {
+        memcpy(vec, elem, tamdato);
+        (*ce)++;
+        return *ce;
+    }
+
+    // Encontrar la posición correcta para insertar el nuevo elemento
+    while (i < *ce && cmp(base + i * tamdato, elem) < 0) {
+        i++;
+    }
+
+    // Calcular la posición de inserción
+    insertPos = base + i * tamdato;
+    prox = insertPos + tamdato;
+
+    // Mover los elementos a la derecha para hacer espacio para el nuevo elemento
+    memmove(prox, insertPos, (*ce - i) * tamdato);
+
+    // Copiar el nuevo elemento en su posición correcta
+    memcpy(insertPos, elem, tamdato);
+
+    // Incrementar el tamaño del vector
+    (*ce)++;
+    return *ce;
+}
+int cmpInt(const void* a, const void* b) {
+    int int_a = *(const int*)a;
+    int int_b = *(const int*)b;
+    return (int_a > int_b) - (int_a < int_b);
+}
+
+
+/*Ordenamiento genérico - Desarrolle una función genérica que ordene un vector. Puede ayudarse con
+las funciones intercambio y buscar menor desarrolladas en ejercicios anteriores e implementar un
+algoritmo de selección.
+*/
+void ordSelec(void *vec, size_t ce, size_t tam, int cmp(const void *, const void *))
+{
+    size_t i, j;
+    char *menor = (char *)vec; // Puntero para el elemento menor
+    char *ini = (char *)vec;   // Puntero al inicio del array
+
+    for (i = 0; i < ce - 1; i++)
+        {
+            menor = ini + i * tam; // Establecer el menor como el elemento actual
+
+            for (j = i + 1; j < ce; j++)
+                {
+                    char *curr = ini + j * tam; // Puntero al elemento actual en el ciclo
+
+                    if (cmp(curr, menor) < 0) // Verificar si el elemento actual es menor que el menor encontrado hasta ahora
+                        menor = curr; // Actualizar el menor encontrado
+                }
+
+            if (menor != (ini + i * tam)) // Si encontramos un menor diferente al actual, intercambiarlos
+                swap1(menor, ini + i * tam, tam);
+        }
 }
 
 

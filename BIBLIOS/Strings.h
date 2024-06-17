@@ -18,4 +18,6 @@ int contarAparicionesDeUnaPalabra(const char* cad, const char* pal);
 void invertirCad(char* cad);
 void normalizarOracion(char* cad);
 char* desofuscarSinProximaPalabra(char* cad);
+
+
 #endif // STRINGS_H_INCLUDED

@@ -1,22 +1,28 @@
 #ifndef FUNC_ARCH_H_INCLUDED
 #define FUNC_ARCH_H_INCLUDED
+#define MAX_LEN 30
+//estructuras
+typedef struct {
+    int dni;
+    char apellido[MAX_LEN];
+    char nombre[MAX_LEN];
+    double sueldo;
+} Empleado;
 
-typedef struct
-{
-    int leg;
-    char nombre[30];
+typedef struct {
+    int dni;
+    char apellido[MAX_LEN];
+    char nombre[MAX_LEN];
     float promedio;
-}sEstudiante;
+} Estudiante;
 
-typedef struct
-{
-    int leg;
-    char nombre[30];
-    float promedio;
-    char estado;
-}sNovedades;
+//Prototipos de funciones
 
-int crearArch();
-void leerArch(char * arch, char* texto);
+void mergeEj7(const char* archEmp, const char* archEst);
+
+
+void mostrarEmpleado(void* val);
+
+void mostrarEstudiante(void* val);
 
 #endif // FUNC_ARCH_H_INCLUDED

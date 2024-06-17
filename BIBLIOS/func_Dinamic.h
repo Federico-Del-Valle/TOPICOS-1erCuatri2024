@@ -8,6 +8,8 @@ typedef struct
     float promedio;
     char condicion;
 }sAlumno;
+
+//funciones
 void mostrarAlumnos(sAlumno* vec, int tam);
 int* crearVector(int tam);
 void destruirVector(int* vec);
