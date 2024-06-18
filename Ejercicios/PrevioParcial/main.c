@@ -9,17 +9,16 @@
 #include "../../BIBLIOS/func_Mat.h"
 #include "../../BIBLIOS/func_Dinamic.h"
 #include "../../BIBLIOS/func_Vec.h"
+#include "../../BIBLIOS/parcial.h"
 
 int main() {
-    generarArchivoEmpleados("empleados.dat");
-    generarArchivoEstudiantes("estudiantes.dat");
-    recorrerArch("empleados.dat",sizeof(Empleado), mostrarEmpleado);
-    printf("\nArchivo estudiantes----\n");
-
-    recorrerArch("estudiantes.dat", sizeof(Estudiante),mostrarEstudiante);
-    puts("");
-   // Ejemplo con un array de enteros
-    mergeEj7("empleados.dat", "estudiantes.dat");
-    recorrerArch("empleados.dat", sizeof(Empleado), mostrarEmpleado);
+    char oracion[1000];
+    char* oracionOfus;
+    int des;
+    leerArchTexto("parcial.txt",oracion, &des);
+    printf(" %-20s",oracion);
+    oracionOfus = ofuscar(oracion, &des);
+    printf("\n %s", oracionOfus);
+    escribirArchOfus("parcialOfus.txt", oracionOfus, &des);
     return 0;
 }
