@@ -87,3 +87,179 @@ int escribirArchOfus(const char* arch, char* frase, int* des)
 }
 
 
+//OTRO MODELO DE PARCIAL
+
+/*Realice una función que reciba por parámetro una matriz (máximo 100 Filas y 100
+columnas), la cantidad de filas y columnas reales y que realice lo siguiente:
+-Recorra y muestre los elementos que conformarían la "Z" de la matriz.*/
+int recorrerZ(int mat[][MAX_COL], int f, int c)
+{
+    int i,j;
+
+    for(i=0;i<f;i++)
+    {
+        if((i==0)||(i==(f-1)))
+        {
+            for(j=0;j<c;j++)
+            {
+                printf("%d", mat[i][j]);
+            }
+            j--;
+        }
+        else
+        {
+            j--;
+            printf("%d", mat[i][j]);
+        }
+    }
+}
+//OTRO EJERCICIO DE PARCIAL QUE PEDIA RECORRER EN N LA MATRIZ (no me sale perfecto, y prefiero practicar otras cosas)
+
+int recorrerN(int mat[][MAX_COL], int f, int c)
+{
+    int i, j;
+    for(j =0; j<c ; j++)
+    {
+        if((j==0)|| (j == c-1))
+        {
+            for(i = f-1; i >-1; i--)
+            {
+                printf("%d",mat[i][j]);
+            }
+            i++;
+        }
+        else
+        {
+            printf("%d", mat[i][j]);
+            i++;
+        }
+    }
+}
+
+
+//RECORRER MATRIZ TRIANGULO SUPERIOR MEDIO, (me salio a la primera, voy a llorar)
+
+int trianguloSuperior(int mat[][MAX_COL], int f, int c)
+{
+    int i,j;
+    for(i = 0; i< f-i; i++)
+    {
+        for(j=0+i; j< c-i; j++)
+        {
+            printf("%d", mat[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+
+//PARCIAL MARTES TURNO TARDE PABLO SOLIGO 18/6/2024
+
+
+char* str_cat( char* s1, const char* s2)
+{
+    while(*s1)
+    {
+        s1++; // vamos al final de la cadena
+    }
+    *s1 = ' ';
+    s1++;
+    while(*s2)
+    {
+        *s1= *s2;
+        s2++;
+        s1++;
+    }
+    *s1 = '\0';
+    return s1;
+}
+
+int sumTrianInfEntreDiag(int mat[][MAX_COL], int fc){
+    int i,j;
+    int k=0,t=fc-1;
+    int suma = 0;
+
+    for(i= fc-1; i>fc/2;i--){
+        for(j=k+1; j < t; j++){
+            suma+=mat[i][j];
+        }
+        k++;
+        t--;
+        puts("");
+    }
+
+
+    return suma;
+}
+
+void qsort_m(void *base, unsigned nmemb, unsigned tamanyo, int (*comparar)(const void*, const void*)) {
+    size_t i, j;
+    char *menor = (char *)base; // Puntero para el elemento menor
+    char *ini = (char *)base;   // Puntero al inicio del array
+
+    for (i = 0; i < nmemb - 1; i++) {
+        menor = ini + i * tamanyo; // Establecer el menor como el elemento actual
+
+        for (j = i + 1; j < nmemb; j++) {
+            char *curr = ini + j * tamanyo; // Puntero al elemento actual en el ciclo
+
+            if (comparar(curr, menor) < 0) { // Verificar si el elemento actual es menor que el menor encontrado hasta ahora
+                menor = curr; // Actualizar el menor encontrado
+            }
+        }
+
+        if (menor != (ini + i * tamanyo)) { // Si encontramos un menor diferente al actual, intercambiarlos
+            intercambioGenerica1(menor, ini + i * tamanyo, tamanyo);
+        }
+    }
+}
+void intercambioGenerica1(void* dato1, void* dato2, unsigned tam)
+{
+    char* valor1 = (char*)dato1;
+    char* valor2 = (char*)dato2;
+    char temp;
+    while(tam--)
+    {
+        temp = *valor1;
+        *valor1 = *valor2;
+        *valor2 = temp;
+        valor1++;
+        valor2++;
+    }
+}
+
+int compararInt(const void* a, const void* b)
+{
+    int* pa = (int*)a;
+    int* pb = (int*)b;
+    return *pa - *pb;
+}
+
+char* m_strchr(const char* oracion, int c)
+{
+    while(*oracion)
+    {
+        if(*oracion == (unsigned char)c)
+            return oracion;
+        oracion++;
+    }
+    return NULL;
+}
+
+
+// Qsort
+
+
+
+
+int trianguloDerecha(int Mat[][MAX_COL], int f, int c) {
+    int i, j = 0; // Inicializamos j aquí
+    int sum = 0;
+    for(i = 0; (i < c) && (j < f); i++) {
+        sum += Mat[j][i]; // Suma correcta de los elementos
+        j++; // Incremento de j dentro del bucle
+    }
+    return sum;
+}
+
+

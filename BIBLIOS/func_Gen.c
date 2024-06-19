@@ -60,6 +60,20 @@ int filtroInt(const void* vec)
         return 0;
 }
 
+void* mem_cpy(void* dest, void* src, unsigned tam)
+{
+    char* origen = (char*)src;
+    char* destino = (char*)dest;
+    int i;
+    for(i = 0; i < tam; i++)
+    {
+        *destino = *origen;
+        origen++;
+        destino++;
+    }
+    return dest;
+}
+
 void* _memmove(void* dest, void* src, unsigned tam)
 {
     char* chard= (char*)dest;

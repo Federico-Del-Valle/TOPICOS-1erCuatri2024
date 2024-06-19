@@ -12,13 +12,23 @@
 #include "../../BIBLIOS/parcial.h"
 
 int main() {
-    char oracion[1000];
+    /*char oracion[1000];
     char* oracionOfus;
     int des;
     leerArchTexto("parcial.txt",oracion, &des);
     printf(" %-20s",oracion);
     oracionOfus = ofuscar(oracion, &des);
     printf("\n %s", oracionOfus);
-    escribirArchOfus("parcialOfus.txt", oracionOfus, &des);
+    escribirArchOfus("parcialOfus.txt", oracionOfus, &des);*/
+    int mat[MAX_FIL][MAX_COL] =
+    {
+        {1,0,0,0,0},
+        {1,1,0,0,0},
+        {1,1,1,0,0},
+        {1,1,0,0,0},
+        {1,0,0,0,0}
+    };
+    int sum = trianguloDerecha(mat,5,5);
+    printf("\n%d", sum);
     return 0;
 }
