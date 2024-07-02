@@ -10,25 +10,24 @@
 #include "../../BIBLIOS/func_Dinamic.h"
 #include "../../BIBLIOS/func_Vec.h"
 #include "../../BIBLIOS/parcial.h"
+#include "../../BIBLIOS/ParcialDesofu.h"
 
-int main() {
-    /*char oracion[1000];
-    char* oracionOfus;
-    int des;
-    leerArchTexto("parcial.txt",oracion, &des);
-    printf(" %-20s",oracion);
-    oracionOfus = ofuscar(oracion, &des);
-    printf("\n %s", oracionOfus);
-    escribirArchOfus("parcialOfus.txt", oracionOfus, &des);*/
-    int mat[MAX_FIL][MAX_COL] =
-    {
-        {1,0,0,0,0},
-        {1,1,0,0,0},
-        {1,1,1,0,0},
-        {1,1,0,0,0},
-        {1,0,0,0,0}
-    };
-    int sum = trianguloDerecha(mat,5,5);
-    printf("\n%d", sum);
+int main()
+{
+
+    LeerArchOfus("citas.txt");
+    /*char cadena[] = "     Esta es ,,,,, una secuenc    ia  ..__234 cualquie+ra de c a r a c t e res |||1 <a> {reconocer}  ",
+        *ini,
+        *fin;
+        char palabra[30];
+    short int cantidad;
+    proximaPalabra(cadena, &ini, &fin);
+    copiaCad(ini, fin, palabra);
+    desofuscarPalabra(palabra);
+    proximaPalabra(cadena, &ini, &fin);
+    printf("%s", palabra);
+    copiaCad(ini,fin,palabra);
+    printf("%s", palabra);*/
+
     return 0;
 }

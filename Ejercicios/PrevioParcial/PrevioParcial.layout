@@ -2,19 +2,39 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="..\..\BIBLIOS\func.Mat.c" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\BIBLIOS\func.Mat.c" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1883" topLine="67" />
+			<Cursor1 position="934" topLine="145" />
 		</Cursor>
 	</File>
-	<File name="..\..\BIBLIOS\func_Gen.c" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\BIBLIOS\ParcialDesofu.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="901" topLine="0" />
+			<Cursor1 position="167" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="540" topLine="12" />
+			<Cursor1 position="612" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\BIBLIOS\Strings.c" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="7544" topLine="154" />
+		</Cursor>
+	</File>
+	<File name="..\..\BIBLIOS\func_Strings.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="46" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\BIBLIOS\func_Gen.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="625" topLine="20" />
+		</Cursor>
+	</File>
+	<File name="..\..\BIBLIOS\func_Gen.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="11124" topLine="331" />
 		</Cursor>
 	</File>
 	<File name="..\..\BIBLIOS\Strings.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -22,29 +42,44 @@
 			<Cursor1 position="796" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="..\..\BIBLIOS\parcial.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="590" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\..\BIBLIOS\parcial.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="20" topLine="42" />
+		</Cursor>
+	</File>
+	<File name="..\..\BIBLIOS\ParcialDesofu.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1324" topLine="42" />
+		</Cursor>
+	</File>
+	<File name="..\..\BIBLIOS\func_Strings.c" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5401" topLine="113" />
+		</Cursor>
+	</File>
 	<File name="..\..\BIBLIOS\func_Mat.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="591" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="..\..\BIBLIOS\func_Gen.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\BIBLIOS\func_Arch.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="79" topLine="0" />
+			<Cursor1 position="438" topLine="6" />
 		</Cursor>
 	</File>
-	<File name="..\..\BIBLIOS\func_Arch.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\BIBLIOS\func_Arch.c" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="261" topLine="0" />
+			<Cursor1 position="5807" topLine="164" />
 		</Cursor>
 	</File>
-	<File name="..\..\BIBLIOS\func_Arch.c" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\..\BIBLIOS\func_Dinamic.c" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="124" topLine="27" />
-		</Cursor>
-	</File>
-	<File name="..\..\BIBLIOS\Strings.c" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="8629" topLine="261" />
+			<Cursor1 position="1880" topLine="169" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

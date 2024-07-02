@@ -5,7 +5,7 @@
 
 //unsigned m
 
-int mstrlen(const char* oracion)
+int m_strlen(const char* oracion)
 {
     const char* pt = oracion;
     int cant =0;
@@ -37,7 +37,7 @@ char* mstrcpy(char* dest, const char* src)
 
 // STRING COMPARE
 
-int mstrcmp(const char* oracion1, const char* oracion2)
+int m_strcmp(const char* oracion1, const char* oracion2)
 {
     const char* pt1 = oracion1;
     const char* pt2 = oracion2;
@@ -148,14 +148,14 @@ void normalizarOracion(char* cad)
     return *((int*) a) - *((int*)b);
 }*/
 
-int esLetra1(char letra) {
+int es_Letra1(char letra) {
     int r;
     r = (letra >= 'A' && letra <= 'Z') || (letra >= 'a' && letra <= 'z')?1:0;
     return r;
 }
 
 
-int proximaPalabra1(const char* cad, char** pini, char** pfin) { // Busca todas las palabras de la cadena hasta que se encuentra con el \0
+int proxima_Palabra1(const char* cad, char** pini, char** pfin) { // Busca todas las palabras de la cadena hasta que se encuentra con el \0
     char *plect, *pfin_aux = (*pfin) + 1;
     int f = 1, reg = 1, cont = 0;
     if(!(*pfin_aux))
@@ -168,7 +168,7 @@ int proximaPalabra1(const char* cad, char** pini, char** pfin) { // Busca todas 
         } // j servirá para indicar próximamente a *pini dónde comienza la próxima palabra luego de la primer llamada a la fn.
     while((*plect) && reg)
         { // reg: en complemento con ' f ', quien delimita el comienzo de una palabra, reg se encargará de determinar el fin de la misma.; el término (*plect) se encargará de definir a nivel frase cuándo es que se termina el string, osea, al detectar un ' \0 '
-            if(esLetra1(*plect))
+            if(es_Letra1(*plect))
             {
                 if(f)
                     {
@@ -199,7 +199,7 @@ int proximaPalabra1(const char* cad, char** pini, char** pfin) { // Busca todas 
 
 
 //Otra forma de normalizar oracion, pero con el uso de proxima palabra
-char* normalizarPalabra(char* cad)
+char* normalizar_Palabra(char* cad)
 {
     char *inicio = cad, *fin = cad;
     char *dest = cad;  // Puntero de destino para la cadena normalizada
@@ -237,6 +237,8 @@ char* normalizarPalabra(char* cad)
             }
     }
     *dest = '\0';
+
+    return inicio;
 }
 
 

@@ -1,6 +1,7 @@
 #include "func_Arch.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include<string.h>
 #define MIN_REQ 7
 //EJERCICIO 3.7
 
@@ -162,6 +163,39 @@ void mostrarEstudiante(void* val)
     Estudiante* aux = (Estudiante*)val;
     printf("%8d  %-20s  %-20s  %.2f\n", aux->dni, aux->apellido, aux->nombre, aux->promedio);
 }
+
+
+int leerArchTxt(const char* nombre, unsigned tamDato)
+{
+    sEstudiante* estudiante = malloc(tamDato);
+    FILE* arch = fopen(nombre, "r");
+    //FILE* archBin = fopen("estudiantes.dat", "wb");
+    char linea[100];
+    if(!estudiante)
+    {
+        return 0;
+    }
+    while(fgets(linea,sizeof(linea), arch))
+    {
+        char* actual = linea;
+        actual = strrchr(actual,'\n');
+        *actual = '\0';
+        //copiamos condicion
+        actual = strrchr(linea,'|');
+        strcpy(estudiante->condicion, actual+1);
+        *actual = '\0';
+        //edad
+        actual = strrchr(linea, '|');
+        sscanf(actual + 1, "%d", &estudiante->edad);
+        *actual = '\0';
+        //nombre
+        strcpy(estudiante->nombre, linea);
+        printf("%d\n", estudiante->edad);
+    }
+    free(estudiante);
+    return 1;
+}
+
 
 
 

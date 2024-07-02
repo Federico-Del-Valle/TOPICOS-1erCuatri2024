@@ -31,7 +31,7 @@ int sumatoriaDiagonalInf(int mat[][MAX_COL], int f, int c)
 //suma diagonal principal
 int sumatoriaDiagonalPrincipal(int mat[][MAX_COL], int f, int c)
 {
-    int i, j;
+    int i;
     int sumatoria = 0;
     for(i = 0; i < c; i++)
         sumatoria+= mat[i][i];
@@ -40,7 +40,7 @@ int sumatoriaDiagonalPrincipal(int mat[][MAX_COL], int f, int c)
 //suma diagonal secundaria
 int sumatoriaDiagonalSec(int mat[][MAX_COL], int f, int c)
 {
-    int i, j;
+    int i;
     int sumatoria= 0;
     for(i = 0; i < c; i ++)
     {

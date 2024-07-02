@@ -41,30 +41,32 @@
 	<stdio.h>
 	<stdlib.h>
 
-1718660597 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_arch.c
+1719947045 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_arch.c
 	"func_Arch.h"
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 
-1718656403 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_arch.h
+1719723272 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_arch.h
 
-1718757498 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_gen.c
+1719680202 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_gen.c
 	"func_Gen.h"
 	<stdio.h>
+	<stdlib.h>
 	<string.h>
 	<stddef.h>
 
-1718631757 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_gen.h
+1719680040 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_gen.h
 	<stddef.h>
 
-1718219007 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\strings.c
+1719670314 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\strings.c
 	"Strings.h"
 	<stdio.h>
 	<string.h>
 
-1718542370 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\strings.h
+1719922843 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\strings.h
 
-1718803457 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\ejercicios\previoparcial\main.c
+1719935956 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\ejercicios\previoparcial\main.c
 	<stdio.h>
 	<stdlib.h>
 	<search.h>
@@ -76,12 +78,13 @@
 	"../../BIBLIOS/func_Dinamic.h"
 	"../../BIBLIOS/func_Vec.h"
 	"../../BIBLIOS/parcial.h"
+	"../../BIBLIOS/ParcialDesofu.h"
 
 1716654284 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_strings.h
 
 1718396792 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_mat.h
 
-1718396240 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func.mat.c
+1719618090 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func.mat.c
 	"func_Mat.h"
 	<stdio.h>
 	<stdlib.h>
@@ -102,10 +105,23 @@
 
 1718427570 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_vec.h
 
-1718803579 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\parcial.c
+1719670285 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\parcial.c
 	"parcial.h"
 	<stdlib.h>
 	<stdio.h>
+	<string.h>
 
-1718803602 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\parcial.h
+1719670135 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\parcial.h
+
+1719618135 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_strings.c
+	"func_Strings.h"
+	<stdio.h>
+	<string.h>
+
+1719928170 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\parcialdesofu.h
+
+1719947068 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\parcialdesofu.c
+	"ParcialDesofu.h"
+	<stdio.h>
+	<stdlib.h>
 

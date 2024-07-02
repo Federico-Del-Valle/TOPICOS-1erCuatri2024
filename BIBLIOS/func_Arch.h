@@ -16,6 +16,13 @@ typedef struct {
     float promedio;
 } Estudiante;
 
+typedef struct
+{
+    char nombre[31];
+    int edad;
+    char condicion[31];
+}sEstudiante;
+
 //Prototipos de funciones
 
 void mergeEj7(const char* archEmp, const char* archEst);

@@ -35,10 +35,6 @@ int mstrcmp(const char* oracion1, const char* oracion2)
 
 
 
-int cmp(const void* a, const void* b)
-{
-    return *((int*) a) - *((int*)b);
-}
 
 int esLetra1(char letra) {
     int r;
@@ -138,6 +134,7 @@ char* normalizarPalabra(char* cad) {
 
     // Añadir el terminador nulo al final de la cadena normalizada
     *dest = '\0';
+    return inicio;
 }
 
 

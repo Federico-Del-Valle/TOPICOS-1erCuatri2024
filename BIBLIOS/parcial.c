@@ -1,6 +1,7 @@
 #include "parcial.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 
 /*Cifrado césar consonántico
@@ -84,6 +85,7 @@ int escribirArchOfus(const char* arch, char* frase, int* des)
     }
     fprintf(archText,"%d| %s", *des, frase);
     fclose(archText);
+    return 1;
 }
 
 
@@ -92,7 +94,7 @@ int escribirArchOfus(const char* arch, char* frase, int* des)
 /*Realice una función que reciba por parámetro una matriz (máximo 100 Filas y 100
 columnas), la cantidad de filas y columnas reales y que realice lo siguiente:
 -Recorra y muestre los elementos que conformarían la "Z" de la matriz.*/
-int recorrerZ(int mat[][MAX_COL], int f, int c)
+void recorrerZ(int mat[][MAX_COL], int f, int c)
 {
     int i,j;
 
@@ -115,7 +117,7 @@ int recorrerZ(int mat[][MAX_COL], int f, int c)
 }
 //OTRO EJERCICIO DE PARCIAL QUE PEDIA RECORRER EN N LA MATRIZ (no me sale perfecto, y prefiero practicar otras cosas)
 
-int recorrerN(int mat[][MAX_COL], int f, int c)
+void recorrerN(int mat[][MAX_COL], int f, int c)
 {
     int i, j;
     for(j =0; j<c ; j++)
@@ -139,7 +141,7 @@ int recorrerN(int mat[][MAX_COL], int f, int c)
 
 //RECORRER MATRIZ TRIANGULO SUPERIOR MEDIO, (me salio a la primera, voy a llorar)
 
-int trianguloSuperior(int mat[][MAX_COL], int f, int c)
+void trianguloSuperior(int mat[][MAX_COL], int f, int c)
 {
     int i,j;
     for(i = 0; i< f-i; i++)
@@ -240,7 +242,7 @@ char* m_strchr(const char* oracion, int c)
     while(*oracion)
     {
         if(*oracion == (unsigned char)c)
-            return oracion;
+            return (char*) oracion;
         oracion++;
     }
     return NULL;

@@ -31,6 +31,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../../BIBLIOS/ParcialDesofu,c" />
+		<Unit filename="../../BIBLIOS/ParcialDesofu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../BIBLIOS/ParcialDesofu.h" />
 		<Unit filename="../../BIBLIOS/Strings.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -42,11 +47,27 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../../BIBLIOS/func_Arch.h" />
+		<Unit filename="../../BIBLIOS/func_Dinamic.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../BIBLIOS/func_Dinamic.h" />
 		<Unit filename="../../BIBLIOS/func_Gen.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../../BIBLIOS/func_Gen.h" />
 		<Unit filename="../../BIBLIOS/func_Mat.h" />
+		<Unit filename="../../BIBLIOS/func_Strings.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../BIBLIOS/func_Strings.h" />
+		<Unit filename="../../BIBLIOS/func_Vec.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../BIBLIOS/func_Vec.h" />
+		<Unit filename="../../BIBLIOS/parcial.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../BIBLIOS/parcial.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

@@ -1,5 +1,6 @@
 #include "func_Gen.h"
 #include <stdio.h>
+#include<stdlib.h>
 #include <string.h>
 #include <stddef.h>
 
@@ -216,56 +217,6 @@ int cmpChar(const void* a, const void* b)
     return 0;
 }
 
-/*Desarrolle una función genérica que permita insertar de forma ordenada un elemento en un vector.
-Puede ayudarse, usando como patrón, la versión no genérica desarrollada y probada de la práctica 1
-y con las funciones de biblioteca memcpy y memmove.*/
-
-
-//Esta funcion estuve una banda de tiempo en hacerla, me canse asi que le mande lo que habia hecho a chatgpt y me la termino de corregir. Habria que chequearla bien.
-unsigned insertarOrdenado(void* vec, unsigned* ce, unsigned tamdato, unsigned tamvec, void* elem, int cmp(const void*, const void*)) {
-    char* base = (char*)vec;
-    int i = 0;
-    char* insertPos;
-    char* prox;
-
-    // Verificar que no se exceda el tamaño del vector
-    if (*ce >= tamvec) {
-        return *ce; // No se puede insertar porque el vector está lleno
-    }
-
-    // Caso especial: Si el vector está vacío, simplemente insertar el elemento
-    if (*ce == 0) {
-        memcpy(vec, elem, tamdato);
-        (*ce)++;
-        return *ce;
-    }
-
-    // Encontrar la posición correcta para insertar el nuevo elemento
-    while (i < *ce && cmp(base + i * tamdato, elem) < 0) {
-        i++;
-    }
-
-    // Calcular la posición de inserción
-    insertPos = base + i * tamdato;
-    prox = insertPos + tamdato;
-
-    // Mover los elementos a la derecha para hacer espacio para el nuevo elemento
-    memmove(prox, insertPos, (*ce - i) * tamdato);
-
-    // Copiar el nuevo elemento en su posición correcta
-    memcpy(insertPos, elem, tamdato);
-
-    // Incrementar el tamaño del vector
-    (*ce)++;
-    return *ce;
-}
-int cmpInt(const void* a, const void* b) {
-    int int_a = *(const int*)a;
-    int int_b = *(const int*)b;
-    return (int_a > int_b) - (int_a < int_b);
-}
-
-
 /*Ordenamiento genérico - Desarrolle una función genérica que ordene un vector. Puede ayudarse con
 las funciones intercambio y buscar menor desarrolladas en ejercicios anteriores e implementar un
 algoritmo de selección.
@@ -289,8 +240,120 @@ void ordSelec(void *vec, size_t ce, size_t tam, int cmp(const void *, const void
                 }
 
             if (menor != (ini + i * tam)) // Si encontramos un menor diferente al actual, intercambiarlos
-                swap1(menor, ini + i * tam, tam);
+                intercambioGenerica(ini + i *tam, menor, tam);
         }
 }
 
 
+/*Desarrolle una función genérica que permita insertar de forma ordenada un elemento en un vector.
+Puede ayudarse, usando como patrón, la versión no genérica desarrollada y probada de la práctica 1
+y con las funciones de biblioteca memcpy y memmove.*/
+
+unsigned insertarOrdenadoFede(void* vec, unsigned* ce, unsigned tamdato, unsigned tamvec, void* elem, int cmp(const void*, const void*))
+{
+    void* ini = vec;
+    void* fin = vec + ((*(ce) * tamdato)- tamdato); //apunto al ultimo elemento del vector
+
+    if (*ce == 0)
+    {
+        memcpy(vec, elem, tamdato);
+        (*ce)++;
+        return *ce;
+    }
+    while((cmp(fin, elem) > 0) && fin >= ini)
+    {
+        memmove((fin+ tamdato), fin, tamdato );
+        fin -= tamdato;
+    }
+    if(*(ce) < tamvec)
+    {
+        (*ce)++;
+    }
+    memcpy((fin+tamdato), elem, tamdato);
+    return *ce;
+}
+
+int cmpInt(const void* a, const void* b) {
+    int int_a = *(const int*)a;
+    int int_b = *(const int*)b;
+    return (int_a > int_b) - (int_a < int_b);
+}
+
+
+//Mi binary search. Busca un elemento en un array y retorna la posicion de memoria en donde se encuentra y null si no lo encontró
+
+void *bsearch(const void *dato, const void *vec,  size_t ce, size_t tamdato, int (*comparar)(const void *, const void *))
+{
+    int ini = 0;
+    int fin = ce -1;
+    int mitad;
+    char* posEncontrado;
+
+    while(ini <= fin)
+    {
+        mitad = (ini + fin)/2;
+        posEncontrado = (char*)vec+ mitad * tamdato;
+        if(comparar(posEncontrado, dato) == 0)
+        {
+            return posEncontrado;
+        }
+        else
+        {
+            if(comparar(posEncontrado, dato) < 0)
+                ini = mitad +1;
+            else
+                fin = mitad -1;
+        }
+    }
+    return NULL; //si no lo encuentra
+}
+
+//funcion reduce
+
+void* reduce(void* vec, unsigned tam, unsigned ce, void* funcion(void*, const void*), void* init)
+{
+    void* buffer = malloc(tam);
+    if (!buffer)
+    {
+        return NULL;
+    }
+    memcpy(buffer, init, tam); // Copio el valor inicial en buffer
+
+    for (unsigned i = 0; i < ce; i++)
+    {
+        funcion(buffer, vec + i * tam); // Paso el acumulador y el elemento actual
+    }
+    return buffer;
+}
+
+// Función que suma dos enteros
+void* funcionSumar(void* a, const void* b)
+{
+    int* acc = (int*)a;
+    *acc += *(const int*)b;
+    return acc;
+}
+
+
+void ordSeleccionVoid(void *vec, size_t ce, size_t tam, int cmp(const void *, const void *)) // la estoy haciendo con fin didactico para que se vea que es lo mismo manejar con void o con char
+{
+    void* ini = vec;
+    void* menor = vec;
+    unsigned i,j;
+
+    for(i = 0; i < ce; i++)
+    {
+        menor = ini + i * tam; //apunta al menor elemento del array
+        for(j = i +1; j < ce; j ++)
+        {
+            if(cmp(menor, ini + j * tam) > 0)// si la cmp es mayor que 0 significa que el 2do parametro es menor que el primero por ende ahi que cambiarlos
+            {
+                menor = ini + j * tam;
+            }
+        }
+        if(menor != ini+ i * tam)
+        {
+            intercambioGenerica(ini + i * tam, menor, tam);
+        }
+    }
+}
