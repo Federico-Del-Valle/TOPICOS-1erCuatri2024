@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1720021140 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\recusoligotemperaturas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"parcial.h"
+
+1720020562 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\recusoligotemperaturas\parcial.h
+
+1720021208 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\recusoligotemperaturas\parcial.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"parcial.h"
+
