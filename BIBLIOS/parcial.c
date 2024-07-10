@@ -194,6 +194,7 @@ int sumTrianInfEntreDiag(int mat[][MAX_COL], int fc){
     return suma;
 }
 
+//SI ESTAS ACA Y QUERES LA QSORT GENERICA RECURSIVA QUE HICE EN EL PARCIAL PEDIMELA, ME DIO PAJA SUBIRLA ACA PORQUE TENGO QUE BAJAR EL PARCIAL DE MIEL
 void qsort_m(void *base, unsigned nmemb, unsigned tamanyo, int (*comparar)(const void*, const void*)) {
     size_t i, j;
     char *menor = (char *)base; // Puntero para el elemento menor

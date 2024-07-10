@@ -47,7 +47,7 @@
 	<stdlib.h>
 	<string.h>
 
-1719723272 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_arch.h
+1720626868 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_arch.h
 
 1719680202 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_gen.c
 	"func_Gen.h"
@@ -80,7 +80,7 @@
 	"../../BIBLIOS/parcial.h"
 	"../../BIBLIOS/ParcialDesofu.h"
 
-1716654284 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_strings.h
+1720626868 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_strings.h
 
 1718396792 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\func_mat.h
 
@@ -118,10 +118,11 @@
 	<stdio.h>
 	<string.h>
 
-1719928170 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\parcialdesofu.h
+1719947203 c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\parcialdesofu.h
 
-1719947068 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\parcialdesofu.c
+1719947177 source:c:\users\feded\onedrive\desktop\facultad\topicos\githubtopicos\biblios\parcialdesofu.c
 	"ParcialDesofu.h"
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 

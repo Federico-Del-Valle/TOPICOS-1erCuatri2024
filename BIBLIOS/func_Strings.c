@@ -3,6 +3,35 @@
 #include <string.h>
 
 
+
+
+//COPIA UN STRING
+
+char* mstrcpy(char* dest, const char* src)
+{
+    char* cad = dest;
+    while(*src)
+    {
+        *dest = *src;
+        src++;
+        dest++;
+    }
+    *dest = '\0';
+    return cad;
+}
+
+
+//Busca un caracter en un string
+
+char* mstrchr(const char* oracion, int c) {
+    while (*oracion) {
+        if (*oracion == (char)c)
+            return (char*)oracion;
+        oracion++;
+    }
+    return NULL;
+}
+
 int mstrlen(const char* oracion)
 {
     const char* pt = oracion;
@@ -33,7 +62,67 @@ int mstrcmp(const char* oracion1, const char* oracion2)
     return *(unsigned char*)pt1 - *(unsigned char*)pt2;
 }
 
+//A una cadena le agrega otra palabra o frase
 
+char* mstrcat(char* cadena,const char* concat )
+{
+    while(*cadena)
+        cadena++;//nos posicionamos al final de la cadena
+    *cadena = ' ';
+    cadena++;
+    while(*concat)
+    {
+        *cadena = *concat;
+        concat++;
+        cadena++;
+    }
+    *cadena = '\0';
+    return cadena;
+}
+
+
+
+//FUNCION QUE DE VUELTA UN STRING
+void invertirCad(char* cad)
+{
+    char* finCad = cad;
+    char temp;
+    finCad += strlen(cad) -1; //apunta al ultimo elemento de la cadena
+    while(finCad > cad)
+    {
+        temp = *cad;
+        *cad = *finCad;
+        *finCad = temp;
+        finCad--;
+        cad++;
+    }
+}
+
+//Funcion que cuenta la cantidad de veces que aparece una palabra (cambia todo a minus, si no queres que funcione asi, sacale la macro crack ;)  )
+
+int contarAparicionesDeUnaPalabra(const char* cad, const char* pal)
+{
+    int cont =0, contPal = 0;
+    const char* ptrpal = pal;
+    int cantLetras = mstrlen(pal);
+    while(*cad)
+    {
+        if(AMINUSC(*cad) == AMINUSC(*pal))
+        {
+            cont++;
+            pal++;
+        }
+        else
+        {
+            cont = 0;
+            pal = ptrpal;
+        }
+        if(cont == cantLetras)
+            contPal++;
+        cad++;
+    }
+    return contPal;
+}
 
 
 int esLetra1(char letra) {
@@ -85,6 +174,42 @@ int proximaPalabra1(const char* cad, char** pini, char** pfin) { // Busca todas 
     return cont;
 }
 
+
+
+//Normalizar oracion por ej=  "LA viDa Es  uNA    pOrQUEriA", normalizada = "La Vida Es Una Porqueria"
+void normalizarOracion(char* cad)
+{
+    int first = 1;
+    char* cadNor = cad;
+    while(*cadNor)
+    {
+        if(first)
+        {
+            *cad = AMAYUS(*cadNor);
+            first = 0;
+            cad++;
+            cadNor++;
+        }
+        while(*cadNor != ' ' && *cadNor)
+        {
+            *cad = AMINUSC(*cadNor);
+            cad++;
+            cadNor++;
+        }
+        while(*cadNor == ' ')
+            cadNor++;
+        if(*cadNor)
+        {
+            *cad = ' ';
+            cad++;
+            first=1;
+        }
+    }
+    *cad = '\0';
+}
+
+
+//normalizar con proximapalabra
 char* normalizarPalabra(char* cad) {
     char *inicio = cad, *fin = cad;
     char *dest = cad;  // Puntero de destino para la cadena normalizada
@@ -130,11 +255,42 @@ char* normalizarPalabra(char* cad) {
             // Mover el puntero cad al final de la palabra actual
                 cad = fin + 1;
             }
-    }
-
-    // Añadir el terminador nulo al final de la cadena normalizada
+    }// Añadir el terminador nulo al final de la cadena normalizada
     *dest = '\0';
     return inicio;
+}
+
+
+
+
+char* desofuscarSinProximaPalabra(char* cad)
+{
+    char grupo[] = "abcdghijkoqtuv";
+    char* cadenaOriginal= cad;
+    char* posEncontrado;
+    int pos = 1, desplazamiento;
+
+    while(*cad)
+    {
+        if(!ESLETRA(*cad))
+        {
+           pos = 0;
+        }
+        posEncontrado = mstrchr(grupo,*cad);
+        if(posEncontrado!= NULL)
+        {
+            if(posEncontrado - grupo + pos < strlen(grupo))
+                *cad = *(posEncontrado + pos);
+            else
+            {
+                desplazamiento = (posEncontrado - grupo + pos) % strlen(grupo);
+                *cad = *(grupo+ desplazamiento);
+            }
+        }
+        cad++;
+        pos++;
+    }
+    return cadenaOriginal;
 }
 
 

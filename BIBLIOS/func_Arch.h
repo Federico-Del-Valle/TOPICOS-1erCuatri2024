@@ -27,7 +27,6 @@ typedef struct
 
 void mergeEj7(const char* archEmp, const char* archEst);
 
-
 void mostrarEmpleado(void* val);
 
 void mostrarEstudiante(void* val);

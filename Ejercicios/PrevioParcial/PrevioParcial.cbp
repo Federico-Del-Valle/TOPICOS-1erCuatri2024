@@ -36,10 +36,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../../BIBLIOS/ParcialDesofu.h" />
-		<Unit filename="../../BIBLIOS/Strings.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../../BIBLIOS/Strings.h" />
 		<Unit filename="../../BIBLIOS/func.Mat.c">
 			<Option compilerVar="CC" />
 		</Unit>
