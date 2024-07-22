@@ -82,7 +82,7 @@ char* mstrcat(char* cadena,const char* concat )
 
 
 
-//FUNCION QUE DE VUELTA UN STRING
+//FUNCION QUE INVIERTA UN STRING
 void invertirCad(char* cad)
 {
     char* finCad = cad;
